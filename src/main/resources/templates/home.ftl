@@ -11,15 +11,16 @@
 	
 	<!-- Main body -->
 	<div class="container">
-	<h2>Send a reply</h2>
-			<div class="well">Enter your message below.</div>
-		<form>
+		<h2>Send a reply</h2>
+		<div class="">Enter your message below.</div>	
+		<form:form method="POST" modelAttribute="correspondenceReply" action="/correspondence/reply" class="errorsForm" role="form" id="formSendReply">
+
 			
 			<div class="form-group">
 				<label for="notes" class="control-label col-sm-2">Message</label>
 				<textarea id="notes" rows="20" cols="80"></textarea>
 			</div>
-			<button type="submit" class="btn btn-primary col-sm-1">Submit</button>
+			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
 	

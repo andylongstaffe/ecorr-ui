@@ -26,6 +26,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @EnableAutoConfiguration
 @ComponentScan
@@ -38,6 +39,12 @@ public class SampleActuatorUiApplication {
 		model.put("title", "Hello Home");
 		model.put("date", new Date());
 		return "home";
+	}
+	
+	@RequestMapping(value = "/correspondence/reply", method = RequestMethod.POST)
+	public String correspondenceReply(Map<String, Object> model) {
+		System.out.println("Processing customer reply");
+		return "response";
 	}
 
 	@RequestMapping("/foo")
